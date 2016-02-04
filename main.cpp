@@ -6,11 +6,13 @@
 using namespace std;
 
 
-void TestObserver();
+void testObserver();
+void testSingleton();
 
 int main()
 {
-	TestObserver();
+	testObserver();
+	testSingleton();
 	return 0;
 }
 

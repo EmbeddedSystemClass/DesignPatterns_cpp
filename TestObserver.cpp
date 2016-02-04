@@ -8,8 +8,16 @@
 
 using namespace std;
 
-void TestObserver()
+
+/**
+ * Story:
+ *  Create a stock, and 3 investors
+ *  3 investors buy the stock
+ *  When the stock price changed, the investors get notification
+**/
+void testObserver()
 {
+	cout << endl << "<<Test Singleton>>" << endl;
 	Stock ibm("Ibm", 10.12);
 	Investor *alice = new Investor("Alice");
 	Investor *bob = new Investor("Bob");
