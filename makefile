@@ -1,21 +1,26 @@
-all: drivers.a observer.a singleton.a
+all: observer.a singleton.a adapter.a
 	g++ -c main.cpp
-	g++ main.o drivers.a observer.a singleton.a
+	g++ main.o observer.a singleton.a adapter.a
 
-drivers.a: TestObserver.cpp TestSingleton.cpp
-	g++ -c TestObserver.cpp
-	g++ -c TestSingleton.cpp
-	ar r drivers.a TestObserver.o TestSingleton.o
+adapter.a: Adapter/TestAdapter.cpp Adapter/Adapter1.cpp Adapter/OldClass1.cpp Adapter/Adapter2.cpp Adapter/OldClass2.cpp
+	g++ -c Adapter/TestAdapter.cpp
+	g++ -c Adapter/Adapter1.cpp
+	g++ -c Adapter/OldClass1.cpp
+	g++ -c Adapter/Adapter2.cpp
+	g++ -c Adapter/OldClass2.cpp
+	ar r adapter.a TestAdapter.o Adapter1.o OldClass1.o Adapter2.o OldClass2.o
 
-observer.a: Observer/Investor.cpp Observer/StockBase.cpp Observer/Stock.cpp
+singleton.a: Singleton/TestSingleton.cpp Singleton/LoadBalancer.cpp
+	g++ -c Singleton/TestSingleton.cpp
+	g++ -c Singleton/LoadBalancer.cpp
+	ar r singleton.a TestSingleton.o LoadBalancer.o
+
+observer.a: Observer/TestObserver.cpp Observer/Investor.cpp Observer/StockBase.cpp Observer/Stock.cpp
+	g++ -c Observer/TestObserver.cpp
 	g++ -c Observer/Investor.cpp
 	g++ -c Observer/StockBase.cpp
 	g++ -c Observer/Stock.cpp
-	ar r observer.a Investor.o StockBase.o Stock.o
-
-singleton.a: Singleton/LoadBalancer.cpp
-	g++ -c Singleton/LoadBalancer.cpp
-	ar r singleton.a LoadBalancer.o
+	ar r observer.a TestObserver.o Investor.o StockBase.o Stock.o
 
 clean:
-	rm -f *.o *.a
+	rm -f *.o *.a *.exe

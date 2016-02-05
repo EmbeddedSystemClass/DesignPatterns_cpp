@@ -3,7 +3,7 @@
 #include <string>
 #include <list>
 
-#include "./Singleton/LoadBalancer.h"
+#include "./LoadBalancer.h"
 
 using namespace std;
 
