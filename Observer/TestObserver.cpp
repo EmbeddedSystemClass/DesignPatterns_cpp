@@ -3,8 +3,8 @@
 #include <string>
 #include <list>
 
-#include "./Investor.h"
-#include "./Stock.h"
+#include "Investor.h"
+#include "Stock.h"
 
 using namespace std;
 

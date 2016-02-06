@@ -3,9 +3,9 @@
 #include <string>
 #include <list>
 
-#include "./NewClass.h"
-#include "./Adapter1.h"
-#include "./Adapter2.h"
+#include "NewClass.h"
+#include "Adapter1.h"
+#include "Adapter2.h"
 
 using namespace std;
 

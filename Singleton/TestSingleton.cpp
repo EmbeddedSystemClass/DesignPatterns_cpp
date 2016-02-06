@@ -3,7 +3,7 @@
 #include <string>
 #include <list>
 
-#include "./LoadBalancer.h"
+#include "LoadBalancer.h"
 
 using namespace std;
 
