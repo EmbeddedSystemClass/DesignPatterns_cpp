@@ -1,14 +1,12 @@
 MAKE = make
 CC = g++
 AR = ar
-CFLAG = -O -Wall
-LDFLAGS =
-INCLUDES = -IAdapter -IObsrever -ISingleton
-LIBS = -lm
-TARGET = a.exe
-SUBS = Adapter/adapter.a Observer/observer.a Singleton/singleton.a
-SUBDIRS = Adapter Observer Singleton
-SRCS = main.cpp
+CFLAG = -O
+INCLUDES =
+TARGET = adapter.a
+SUBS =
+SUBDIRS =
+SRCS = TestAdapter.cpp Adapter1.cpp OldClass1.cpp Adapter2.cpp OldClass2.cpp
 OBJS = $(SRCS:.cpp=.o)
 #OBJS = *.o
 
@@ -26,8 +24,8 @@ sub_target:
 		(cd $$subdir && $(MAKE)) ;\
 	done
 
-$(TARGET): $(OBJS) $(SUBS)
-	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(SUBS) $(LIBS)
+$(TARGET): $(OBJS)
+	$(AR) r $@ $(OBJS) $(SUBS)
 
 .PHONY: clean
 clean:
@@ -35,4 +33,3 @@ clean:
 	@for subdir in $(SUBDIRS) ; do \
 		(cd $$subdir && $(MAKE) clean) ;\
 	done
-

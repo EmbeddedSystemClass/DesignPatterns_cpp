@@ -16,6 +16,7 @@ using namespace std;
 void printTime(NewClass *newClass);
 void testAdapter()
 {
+	cout << endl << "<<Test Adapter>>" << endl;
 	NewClass *newClass =  new Adapter1();
 	printTime(newClass);
 
