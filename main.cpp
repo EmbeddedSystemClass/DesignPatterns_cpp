@@ -10,12 +10,14 @@ void testObserver();
 void testSingleton();
 void testAdapter();
 void testChainOfResponsibility();
+void testVisitor();
 int main()
 {
 	testObserver();
 	testSingleton();
 	testAdapter();
 	testChainOfResponsibility();
+	testVisitor();
 	return 0;
 }
 

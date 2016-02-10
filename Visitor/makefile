@@ -1,14 +1,12 @@
 MAKE = make
 CC = g++
 AR = ar
-CFLAG = -O -Wall
-LDFLAGS =
-INCLUDES = -IAdapter -IObsrever -ISingleton -IChainOfResponsibility -IMyInt
-LIBS = -lm
-TARGET = a.exe
-SUBS = Adapter/adapter.a Observer/observer.a Singleton/singleton.a ChainOfResponsibility/chainOfResponsibility.a Visitor/visitor.a
-SUBDIRS = Adapter Observer Singleton ChainOfResponsibility Visitor
-SRCS = main.cpp
+CFLAG = -O
+INCLUDES =
+TARGET = visitor.a
+SUBS =
+SUBDIRS =
+SRCS = TestVisitor.cpp MyInt.cpp MyDouble.cpp VisitorNewOP1.cpp VisitorNewOP2.cpp
 OBJS = $(SRCS:.cpp=.o)
 #OBJS = *.o
 
@@ -27,7 +25,7 @@ sub_target:
 	done
 
 $(TARGET): $(OBJS) $(SUBS)
-	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(SUBS) $(LIBS)
+	$(AR) r $@ $(OBJS) $(SUBS)
 
 .PHONY: clean
 clean:
@@ -35,4 +33,3 @@ clean:
 	@for subdir in $(SUBDIRS) ; do \
 		(cd $$subdir && $(MAKE) clean) ;\
 	done
-

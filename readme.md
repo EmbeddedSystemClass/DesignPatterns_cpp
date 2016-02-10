@@ -5,6 +5,7 @@
 - Singleton
 - Adapter
 - Chain Of Responsibility
+- Visitor
 
 ## Environment
 gcc (g++) and make on msys
