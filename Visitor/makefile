@@ -1,7 +1,7 @@
 MAKE = make
 CC = g++
 AR = ar
-CFLAG = -O
+CFLAGS = -g -O0 -Wall
 INCLUDES =
 TARGET = visitor.a
 SUBS =

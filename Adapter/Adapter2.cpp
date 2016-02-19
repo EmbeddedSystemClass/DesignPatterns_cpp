@@ -3,8 +3,10 @@
  * Adapter class
 **/
 #include <iostream>
+#include <stdio.h>
 #include <string>
 #include <stdlib.h>
+#include <memory.h>	// for memcpy
 #include "Adapter2.h"
 
 using namespace std;

@@ -1,7 +1,7 @@
 MAKE = make
 CC = g++
 AR = ar
-CFLAG = -O
+CFLAGS = -g -O0 -Wall
 INCLUDES =
 TARGET = adapter.a
 SUBS =
@@ -24,7 +24,7 @@ sub_target:
 		(cd $$subdir && $(MAKE)) ;\
 	done
 
-$(TARGET): $(OBJS)
+$(TARGET): $(OBJS) $(SUBS)
 	$(AR) r $@ $(OBJS) $(SUBS)
 
 .PHONY: clean

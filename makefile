@@ -1,7 +1,7 @@
 MAKE = make
 CC = g++
 AR = ar
-CFLAG = -O -Wall
+CFLAGS = -g -O0 -Wall
 LDFLAGS =
 INCLUDES = -IAdapter -IObsrever -ISingleton -IChainOfResponsibility -IMyInt
 LIBS = -lm
