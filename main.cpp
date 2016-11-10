@@ -5,7 +5,6 @@
 
 using namespace std;
 
-
 void testObserver();
 void testSingleton();
 void testAdapter();

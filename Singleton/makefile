@@ -1,35 +1,25 @@
-MAKE = make
-CC = g++
-AR = ar
-CFLAGS = -g -O0 -Wall
-INCLUDES =
+include ../makefile_config
+
 TARGET = singleton.a
+SRCS = TestSingleton.cpp LoadBalancer.cpp
+INCLUDES =
 SUBS =
 SUBDIRS =
-SRCS = TestSingleton.cpp LoadBalancer.cpp
-OBJS = $(SRCS:.cpp=.o)
-#OBJS = *.o
-
-.c.o:
-	$(CC) $(CFLAGS) $(INCLUDES) -c $<
-.cpp.o:
-	$(CC) $(CFLAGS) $(INCLUDES) -c $<
-
 
 all: sub_target $(TARGET)
-
-.PHONY: sub_target
-sub_target:
-	@for subdir in $(SUBDIRS) ; do \
-		(cd $$subdir && $(MAKE)) ;\
-	done
 
 $(TARGET): $(OBJS) $(SUBS)
 	$(AR) r $@ $(OBJS) $(SUBS)
 
+ .PHONY: sub_target
+sub_target:
+ifdef SUBDIRS
+	$(foreach subdir,$(SUBDIRS),cd $(subdir) && $(MAKE) && cd ../ &&) cd ./
+endif
+
 .PHONY: clean
 clean:
-	rm -f *.o *.a *.exe
-	@for subdir in $(SUBDIRS) ; do \
-		(cd $$subdir && $(MAKE) clean) ;\
-	done
+	$(DEL) *.o *.a *.exe
+ifdef SUBDIRS
+	$(foreach subdir,$(SUBDIRS),cd $(subdir) && $(MAKE) clean && cd ../ &&) cd ./
+endif

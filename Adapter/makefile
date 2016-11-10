@@ -1,35 +1,25 @@
-MAKE = make
-CC = g++
-AR = ar
-CFLAGS = -g -O0 -Wall
-INCLUDES =
+include ../makefile_config
+
 TARGET = adapter.a
+SRCS = TestAdapter.cpp Adapter1.cpp OldClass1.cpp Adapter2.cpp OldClass2.cpp
+INCLUDES =
 SUBS =
 SUBDIRS =
-SRCS = TestAdapter.cpp Adapter1.cpp OldClass1.cpp Adapter2.cpp OldClass2.cpp
-OBJS = $(SRCS:.cpp=.o)
-#OBJS = *.o
-
-.c.o:
-	$(CC) $(CFLAGS) $(INCLUDES) -c $<
-.cpp.o:
-	$(CC) $(CFLAGS) $(INCLUDES) -c $<
-
 
 all: sub_target $(TARGET)
-
-.PHONY: sub_target
-sub_target:
-	@for subdir in $(SUBDIRS) ; do \
-		(cd $$subdir && $(MAKE)) ;\
-	done
 
 $(TARGET): $(OBJS) $(SUBS)
 	$(AR) r $@ $(OBJS) $(SUBS)
 
+ .PHONY: sub_target
+sub_target:
+ifdef SUBDIRS
+	$(foreach subdir,$(SUBDIRS),cd $(subdir) && $(MAKE) && cd ../ &&) cd ./
+endif
+
 .PHONY: clean
 clean:
-	rm -f *.o *.a *.exe
-	@for subdir in $(SUBDIRS) ; do \
-		(cd $$subdir && $(MAKE) clean) ;\
-	done
+	$(DEL) *.o *.a *.exe
+ifdef SUBDIRS
+	$(foreach subdir,$(SUBDIRS),cd $(subdir) && $(MAKE) clean && cd ../ &&) cd ./
+endif
