@@ -6,15 +6,15 @@
 #ifndef __BATCH__
 #define __BATCH__
 #include <list>
-#include "Command.h"
+#include "CalcCommand.h"
 
 class Batch
 {
 	private:
-		std::list<Command*> m_commandList;
+		std::list<CalcCommand*> m_commandList;
 
 	public:
-		void addCommand(Command *command);
+		void addCommand(CalcCommand *command);
 		void executeAll();
 };
 

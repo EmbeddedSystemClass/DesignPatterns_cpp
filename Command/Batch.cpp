@@ -8,14 +8,14 @@
 
 using namespace std;
 
-void Batch::addCommand(Command *command)
+void Batch::addCommand(CalcCommand *command)
 {
 	m_commandList.push_back(command);
 }
 
 void Batch::executeAll()
 {
-	for( list<Command*>::iterator itr = m_commandList.begin(); itr != m_commandList.end(); itr++ ) {
+	for( list<CalcCommand*>::iterator itr = m_commandList.begin(); itr != m_commandList.end(); itr++ ) {
 		(*itr)->execute();
 	}
 }

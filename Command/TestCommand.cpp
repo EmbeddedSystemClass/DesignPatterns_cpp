@@ -2,8 +2,8 @@
 #include <iomanip>
 #include <string>
 #include "Calculator.h"
-#include "GetSum0to10.h"
-#include "GetSum3to7.h"
+#include "CalcSum0to10.h"
+#include "CalcSum3to7.h"
 #include "Batch.h"
 
 using namespace std;
@@ -21,11 +21,11 @@ void testCommand()
 	Calculator calc(0);
 	
 	/* Generate commands */
-	GetSum0to10 getSum0to10(calc);
-	GetSum3to7 getSum3to7(calc);
+	CalcSum0to10 calcSum0to10(calc);
+	CalcSum3to7 calcSum3to7(calc);
 
 	Batch batch;
-	batch.addCommand(&getSum0to10);
-	batch.addCommand(&getSum3to7);
+	batch.addCommand(&calcSum0to10);
+	batch.addCommand(&calcSum3to7);
 	batch.executeAll();
 }

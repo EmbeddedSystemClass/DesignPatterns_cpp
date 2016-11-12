@@ -1,7 +1,7 @@
 include ../makefile_config
 
 TARGET = command.a
-SRCS = TestCommand.cpp Calculator.cpp GetSum0to10.cpp GetSum3to7.cpp Batch.cpp
+SRCS = TestCommand.cpp Calculator.cpp CalcSum0to10.cpp CalcSum3to7.cpp Batch.cpp
 INCLUDES =
 SUBS =
 SUBDIRS =

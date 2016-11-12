@@ -1,17 +1,17 @@
 /**
- * Command.h
+ * CalcCommand.h
  * Command class which ceclares an interface for an operation
 */
-#ifndef __COMMAND__
-#define __COMMAND__
+#ifndef __CALC_COMMAND__
+#define __CALC_COMMAND__
 #include "Calculator.h"
 
-class Command
+class CalcCommand
 {
 	protected:
 		Calculator &m_calculator;
 	public:
-		Command(Calculator &calculator)
+		CalcCommand(Calculator &calculator)
 			:m_calculator(calculator)
 		{
 		}
@@ -19,4 +19,4 @@ class Command
 		virtual void execute() = 0;
 };
 
-#endif	//__COMMAND__
+#endif	//__CALC_COMMAND__
