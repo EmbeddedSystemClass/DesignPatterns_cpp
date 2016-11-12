@@ -3,8 +3,8 @@ include makefile_config
 TARGET = a.exe
 SRCS = main.cpp
 INCLUDES = -IAdapter -IObsrever -ISingleton -IChainOfResponsibility -IMyInt
-SUBS = Adapter/adapter.a Observer/observer.a Singleton/singleton.a ChainOfResponsibility/chainOfResponsibility.a Visitor/visitor.a Command/command.a
-SUBDIRS = Adapter Observer Singleton ChainOfResponsibility Visitor Command
+SUBS = Adapter/adapter.a Observer/observer.a Singleton/singleton.a ChainOfResponsibility/chainOfResponsibility.a Visitor/visitor.a Command/command.a Iterator/iterator.a
+SUBDIRS = Adapter Observer Singleton ChainOfResponsibility Visitor Command Iterator
 
 all: sub_target $(TARGET)
 

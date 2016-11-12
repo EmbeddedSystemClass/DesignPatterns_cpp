@@ -6,9 +6,11 @@
 - Adapter
 - Chain Of Responsibility
 - Visitor
+- Command
+- Iterator
 
 ## Environment
-gcc (g++) and make on msys
+gcc (g++) and make on msys (or Visual Studio Code)
 
 ## Build
 

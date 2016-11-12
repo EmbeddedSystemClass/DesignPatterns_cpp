@@ -11,6 +11,7 @@
 class IVisitor
 {
 	public:
+		virtual ~IVisitor(){}
 		virtual void visitMyInt(MyInt *myInt) = 0;
 		virtual void visitMyDouble(MyDouble *MyDouble) = 0;
 };

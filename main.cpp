@@ -2,6 +2,7 @@
 #include <iomanip>
 #include <string>
 #include <list>
+#include <stdio.h>
 
 using namespace std;
 
@@ -11,6 +12,7 @@ void testAdapter();
 void testChainOfResponsibility();
 void testVisitor();
 void testCommand();
+void testIterator();
 int main()
 {
 	testObserver();
@@ -19,8 +21,9 @@ int main()
 	testChainOfResponsibility();
 	testVisitor();
 	testCommand();
+	testIterator();
 
-	int temp;	cin >> temp;
+	getchar();
 	return 0;
 }
 

@@ -19,7 +19,7 @@ double StockBase::getPrice() {
 	return m_price;
 }
 
-double StockBase::setPrice(double price) {
+void StockBase::setPrice(double price) {
 	if( price != m_price) {
 		m_price = price;
 		notify();

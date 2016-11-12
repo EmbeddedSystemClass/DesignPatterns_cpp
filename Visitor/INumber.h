@@ -10,6 +10,7 @@ class IVisitor;
 class INumber
 {
 	public:
+		virtual ~INumber(){}
 		virtual void acceptVisitor(IVisitor *visitor) = 0;
 };
 

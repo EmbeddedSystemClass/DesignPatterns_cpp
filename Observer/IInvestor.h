@@ -11,6 +11,7 @@ class StockBase;
 class IInvestor
 {
 	public:
+		virtual ~IInvestor(){}
 		virtual void notify(StockBase *stockBase) = 0;
 };
 

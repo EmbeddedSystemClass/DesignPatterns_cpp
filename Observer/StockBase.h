@@ -19,7 +19,7 @@ class StockBase
 		std::string getSymbol();
 		//string setSymbol(string symbol);
 		double getPrice();
-		double setPrice(double price);
+		void setPrice(double price);
 
 	private:
 
