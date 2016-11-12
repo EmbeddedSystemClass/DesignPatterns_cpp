@@ -10,6 +10,7 @@ void testSingleton();
 void testAdapter();
 void testChainOfResponsibility();
 void testVisitor();
+void testCommand();
 int main()
 {
 	testObserver();
@@ -17,6 +18,9 @@ int main()
 	testAdapter();
 	testChainOfResponsibility();
 	testVisitor();
+	testCommand();
+
+	int temp;	cin >> temp;
 	return 0;
 }
 
